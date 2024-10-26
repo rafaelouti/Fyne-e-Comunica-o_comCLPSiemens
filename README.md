@@ -22,37 +22,6 @@ go get github.com/robinson/gos7
 handler := gos7.NewTCPClientHandler("192.168.0.1", 0, 1)
 
 
-codigo
-
-package main
-
-import (
-    "fmt"
-    "log"
-    "time"
-    "fyne.io/fyne/v2/app"
-    "fyne.io/fyne/v2/container"
-    "fyne.io/fyne/v2/dialog"
-    "fyne.io/fyne/v2/widget"
-    "github.com/robinson/gos7"
-)
-
-func lerDadosCLP(client *gos7.Client, dbNumber, start, size int) float64 {
-    var buffer = make([]byte, size)
-    err := client.AGReadDB(dbNumber, start, size, buffer)
-    if err != nil {
-        log.Printf("Erro ao ler dados do CLP: %v", err)
-        return 0.0
-    }
-    return gos7.GetFloatAt(buffer, 0)
-}
-
-func main() {
-    // Configuração de conexão com o CLP
-    handler := gos7.NewTCPClientHandler("192.168.0.1", 0, 1)
-    handler.Timeout = 5 * time.Second
-    handler.IdleTimeout = 5 * time.Second
-
     // Conecta ao CLP
     err := handler.Connect()
     if err != nil {
