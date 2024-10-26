@@ -17,10 +17,6 @@ Este projeto demonstra como criar uma interface gráfica utilizando o framework 
    cd seu-repositorio
 
 go get fyne.io/fyne/v2
-go get github.com/robinson/gos7
-
-handler := gos7.NewTCPClientHandler("192.168.0.1", 0, 1)
-
 
     // Conecta ao CLP
     err := handler.Connect()
