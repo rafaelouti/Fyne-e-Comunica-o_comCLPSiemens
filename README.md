@@ -1,4 +1,6 @@
 Interface Gráfica com Fyne e Comunicação com CLP Siemens
+
+
 Este projeto demonstra como criar uma interface gráfica utilizando o framework Fyne e integrar a comunicação com um CLP Siemens usando a biblioteca gos7 em Golang.
 
 Requisitos
@@ -8,44 +10,20 @@ Biblioteca Fyne
 
 Biblioteca gos7
 
-Instalação
-Clone o repositório:
-
-sh
-
-Copiar
 git clone https://github.com/seu-usuario/seu-repositorio.git
 cd seu-repositorio
-Instale as dependências:
 
-sh
 
-Copiar
 go get fyne.io/fyne/v2
 go get github.com/robinson/gos7
-Uso
-Configure a conexão com o CLP:
 
-No código, ajuste o endereço IP, rack e slot do CLP Siemens conforme necessário:
 
-go
-
-Copiar
 handler := gos7.NewTCPClientHandler("192.168.0.1", 0, 1)
-Execute a aplicação:
 
-sh
 
-Copiar
 go run main.go
-Interface Gráfica:
 
-A interface gráfica exibirá os dados de RPM, temperatura e vibração do motor. Use o botão "Atualizar Dados" para ler os dados do CLP e atualizar a interface.
 
-Código
-go
-
-Copiar
 package main
 
 import (
@@ -115,6 +93,7 @@ func main() {
     myWindow.Resize(fyne.NewSize(400, 300))
     myWindow.ShowAndRun()
 }
+
 Explicação
 Importação de Pacotes
 fmt e log: Utilizados para formatar e registrar mensagens de texto e de erro.
